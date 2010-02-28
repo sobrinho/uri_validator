@@ -1,22 +1,24 @@
-require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
 
 desc 'Default: run unit tests.'
 task :default => :test
 
 desc 'Test the validates_as_uri plugin.'
 Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
+  t.libs << 'test'
   t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
 end
 
-desc 'Generate documentation for the validates_as_uri plugin.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'ValidatesAsUri'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+begin
+  require 'jeweler'
+  Jeweler::Tasks.new do |gemspec|
+    gemspec.name = "validates_as_uri"
+    gemspec.summary = "URI validation for ActiveModel"
+    gemspec.email = "gabriel.sobrinho@gmail.com"
+    gemspec.homepage = "http://github.com/sobrinho/validates_as_uri"
+    gemspec.authors = ["Gabriel Sobrinho"]
+  end
+  Jeweler::GemcutterTasks.new
+rescue LoadError
+  puts "Jeweler not available. Install it with: gem install jeweler"
 end

@@ -1,0 +1,24 @@
+h1. ValidatesAsUri
+
+URI validation for ActiveModel
+
+h2. Installation
+
+You can install as gem:
+
+<pre>gem "validates_as_uri"</pre>
+
+Or as plugin:
+
+<pre>$ rails plugin install git://github.com/sobrinho/validates_as_uri.git</pre>
+
+h2. Usage
+
+<pre>class Repository < ActiveRecord::Base
+  validates :url, :uri => { :protocols => %w(git svn) }
+  validates :homepage, :uri => true # default protocols are %w(http https)
+end</pre>
+
+h2. License
+
+Copyright (c) 2009-2010 Gabriel Sobrinho, released under the MIT license
