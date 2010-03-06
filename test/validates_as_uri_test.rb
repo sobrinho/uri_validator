@@ -7,9 +7,9 @@ class ValidatesUriCpfTest < ActiveSupport::TestCase
   end
   
   test "blank values" do
-    assert_equal false, Repository.new(:url => '', :homepage => '').valid?
-    assert_equal false, Repository.new(:url => false, :homepage => false).valid?
-    assert_equal false, Repository.new(:url => nil, :homepage => nil).valid?
+    ['', false, nil].each do |url|
+      assert Repository.new(:url => url, :homepage => url).invalid?
+    end
   end
   
   test "valid protocols" do
