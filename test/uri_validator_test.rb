@@ -1,15 +1,5 @@
 require 'test_helper'
 
-class Repository < Struct.new(:url)
-  include ActiveModel::Validations
-  validates :url, :uri => { :protocols => %w(git svn) }
-end
-
-class Site < Struct.new(:url)
-  include ActiveModel::Validations
-  validates :url, :uri => true
-end
-
 class UriValidatorTest < Test::Unit::TestCase
   def test_valid_protocols
     assert Repository.new('git://github.com/sobrinho/validates_as_uri.git').valid?
