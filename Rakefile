@@ -2,7 +2,7 @@ require 'bundler'
 require 'rake'
 require 'rake/testtask'
 
-task :default => [:test_units]
+task :default => [:test]
 
 Rake::TestTask.new("test") { |t|
   t.pattern = 'test/**/*_test.rb'
