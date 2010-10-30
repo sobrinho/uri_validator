@@ -1,19 +1,18 @@
+# -*- encoding: utf-8 -*-
+$:.push File.expand_path("../lib", __FILE__)
+require "validates_as_uri/version"
+
 Gem::Specification.new do |s|
-  s.name              = "validates_as_uri"
-  s.version           = "0.1.0"
-  s.date              = "2010-10-15"
-  s.summary           = "Feed me."
-  s.homepage          = "http://github.com/webhoernchen/validates_as_uri"
-  s.email             = "c.eichhorn@webmasters.de"
-  s.authors           = [ "Christian Eichhorn" ]
-  s.has_rdoc          = false
-
-  s.files             = %w( README.textile Rakefile MIT-LICENSE )
-  s.files            += Dir.glob("lib/**/*")
-  s.files            += Dir.glob("bin/**/*")
-  s.files            += Dir.glob("man/**/*")
-  s.files            += Dir.glob("test/**/*")
-
-#  s.executables       = %w( validates_as_uri )
-  s.description       = "Feed me."
+  s.name        = "validates_as_uri"
+  s.version     = ValidatesAsUri::VERSION
+  s.platform    = Gem::Platform::RUBY
+  s.authors     = ["Gabriel Sobrinho"]
+  s.email       = ["gabriel.sobrinho@gmail.com"]
+  s.homepage    = "http://github.com/sobrinho/validates_as_uri"
+  s.summary     = %q{URI validation for ActiveModel}
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
+  s.add_dependency %q<activemodel>, [">= 3.0.0"]
 end
