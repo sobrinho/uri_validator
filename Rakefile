@@ -1,24 +1,13 @@
+require 'bundler'
+require 'rake'
 require 'rake/testtask'
 
-desc 'Default: run unit tests.'
-task :default => :test
+task :default => [:test_units]
 
-desc 'Test the validates_as_uri plugin.'
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'test'
+Rake::TestTask.new("test") { |t|
   t.pattern = 'test/**/*_test.rb'
-end
+  t.verbose = true
+  t.warning = true
+}
 
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gemspec|
-    gemspec.name = "validates_as_uri"
-    gemspec.summary = "URI validation for ActiveModel"
-    gemspec.email = "gabriel.sobrinho@gmail.com"
-    gemspec.homepage = "http://github.com/sobrinho/validates_as_uri"
-    gemspec.authors = ["Gabriel Sobrinho"]
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler not available. Install it with: gem install jeweler"
-end
+Bundler::GemHelper.install_tasks
