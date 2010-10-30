@@ -4,15 +4,15 @@ URI validation for ActiveModel
 
 h2. Installation
 
-You can install as gem:
-
-<pre>gem "validates_as_uri"</pre>
-
-Or as plugin:
-
-<pre>$ rails plugin install git://github.com/sobrinho/validates_as_uri.git</pre>
+gem install validates_as_uri
 
 h2. Usage
+
+Gemfile:
+
+<pre>gem 'validate_as_uri'</pre>
+
+Model:
 
 <pre>class Repository < ActiveRecord::Base
   validates :url, :uri => { :protocols => %w(git svn) }
