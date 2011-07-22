@@ -1,22 +1,16 @@
-h1. ValidatesAsUri
+h1. UriValidator
 
 URI validation for ActiveModel
 
 h2. Installation
 
-gem install validates_as_uri
+<pre>gem "uri_validator"</pre>
 
 h2. Usage
 
-Gemfile:
-
-<pre>gem 'validate_as_uri'</pre>
-
-Model:
-
-<pre>class Repository < ActiveRecord::Base
-  validates :url, :uri => { :protocols => %w(git svn) }
-  validates :homepage, :uri => true # default protocols are %w(http https)
+<pre>class Product < ActiveRecord::Base
+  validates :video, :uri => true # default protocols are http and https
+  validates :manual, :uri => %w(http https ftp)
 end</pre>
 
 h2. License
