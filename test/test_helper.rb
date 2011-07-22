@@ -2,7 +2,7 @@ require 'rubygems'
 require 'bundler/setup'
 require 'active_model'
 require 'test/unit'
-require 'validates_as_uri'
+require 'uri_validator'
 
 class Repository < Struct.new(:url)
   include ActiveModel::Validations

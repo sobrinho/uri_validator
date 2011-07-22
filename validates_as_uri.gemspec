@@ -1,14 +1,10 @@
-# -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "validates_as_uri/version"
-
 Gem::Specification.new do |s|
-  s.name        = "validates_as_uri"
-  s.version     = ValidatesAsUri::VERSION
+  s.name        = "uri_validator"
+  s.version     = "0.2.0"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Gabriel Sobrinho"]
   s.email       = ["gabriel.sobrinho@gmail.com"]
-  s.homepage    = "http://github.com/sobrinho/validates_as_uri"
+  s.homepage    = "http://github.com/sobrinho/uri_validator"
   s.summary     = %q{URI validation for ActiveModel}
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
