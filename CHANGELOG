@@ -1,9 +1,16 @@
-0.1.1
-  * Fixed a bug when setting protocols option (thanks webhoernchen)
-  * Added default error message using a rails engine
-  * Added gemspec to repository
-  * Using bundler to manage dependencies
-  * Fixed and refactoring tests
+0.2.0 [Fri Jul 22 2011]
 
-0.1.0
-  * First version
+* Rename to uri_validator
+* Use invalid message instead of invalid_uri
+
+0.1.1 [Sat Oct 30 2010]
+
+* Fixed a bug when setting protocols option (thanks webhoernchen)
+* Added default error message using a rails engine
+* Added gemspec to repository
+* Using bundler to manage dependencies
+* Fixed and refactoring tests
+
+0.1.0 [Sun Feb 28 2010]
+
+* First version
