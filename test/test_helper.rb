@@ -1,15 +1,15 @@
 require 'rubygems'
-require 'bundler/setup'
-require 'active_model'
 require 'test/unit'
+require 'active_model'
 require 'uri_validator'
+require 'ostruct'
 
-class Repository < Struct.new(:url)
+class Repository < OpenStruct
   include ActiveModel::Validations
-  validates :url, :uri => { :protocols => %w(git svn) }
+  validates :uri, :uri => { :protocols => %w(git svn) }
 end
 
-class Site < Struct.new(:url)
+class Site < OpenStruct
   include ActiveModel::Validations
-  validates :url, :uri => true
+  validates :uri, :uri => true
 end
