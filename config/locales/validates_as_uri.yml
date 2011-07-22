@@ -1,4 +1,0 @@
-en:
-  errors:
-    messages:
-      invalid_uri: "must be a valid uri"
