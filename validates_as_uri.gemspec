@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Gabriel Sobrinho"]
   s.email       = ["gabriel.sobrinho@gmail.com"]
-  s.homepage    = "http://github.com/sobrinho/uri_validator"
+  s.homepage    = "https://github.com/nohupbrasil/uri_validator"
   s.summary     = %q{URI validation for ActiveModel}
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
