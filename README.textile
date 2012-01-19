@@ -10,7 +10,7 @@ h2. Usage
 
 <pre>class Product < ActiveRecord::Base
   validates :video, :uri => true # default protocols are http and https
-  validates :manual, :uri => %w(http https ftp)
+  validates :manual, :uri => { :protocols => %w(http https ftp) }
 end</pre>
 
 h2. License
